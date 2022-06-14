@@ -190,7 +190,7 @@
   }
 
   .mobile-nav-show {
-    color: rgba(#fff, 0.9);
+    color: rgba(#fff, 0.95);
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -198,7 +198,7 @@
   }
 
   .mobile-nav-hide {
-    color: rgba(#fff, 0.9);
+    color: rgba(#fff, 0.95);
     font-size: 32px;
     cursor: pointer;
     line-height: 0;
@@ -219,7 +219,7 @@
         content: "";
         position:fixed;
         inset: 0;
-        background: rgba($secondary, 0.7);
+        background: rgba($secondary, 0.85);
         z-index:9996;
       }
     }
