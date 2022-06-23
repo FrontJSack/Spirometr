@@ -81,107 +81,117 @@
     <!-- ======= Our Services Section ======= -->
     <section id="services-list" class="services-list">
       <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Wprowadź parametry swojego badania</h2>
-          <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="150">
-            <div class="row d-flex justify-content-center">
-              <div class="col-md-4 " >
-                <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required>
-              </div>
-              <div class="col-md-4 ">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Wiek" required>
-              </div>
-              <div class="col-md-4 ">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Wzrost" required>
-              </div>
-            </div>  
-          </div>
+        <div class="section-header justify-content-center">
+          <h2>Wypełnij krótki formularz</h2>
         </div>
+      </div>
       <div class="container position-relative" data-aos="fade-up">
-
-        <div class="row gy-4 d-flex justify-content-end">
-          <form action="forms/sprawdzanie.php" method="post" role="form" class="php-email-form">
-            
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
-              <div class="row">
-                <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required>
-                </div>
-                <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Wiek" required>
-                </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Wzrost" required>
-                </div>
-              </div>  
+        <div class="container position-relative d-flex flex-column align-items-center">
+          <h3>Podaj informacje o sobie</h3>
+        </div>
+        <div class="row gy-4 d-flex ">
+          <form>
+            <div class="row justify-content-center">
+              <div class="col-2">
+                <!-- <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required> -->
+                <select name="plec" class="form-control"  id="plec">
+                  <option>Płeć</option>
+                  <option>Mężczyzna</option>
+                  <option>Kobieta</option>
+                </select>
+              </div>
+              <div class="col-2">
+                <!-- <input type="text" name="name" class="form-control" id="name" placeholder="wiek" required> -->
+                <input type="number" name="wiek" class="form-control" id="wiek" min="1" max="120" placeholder="wiek w latach">
+              </div>
+              <div class="col-2">
+                <input type="number" name="wzrost" class="form-control" id="wzrost" min="100" max="250" placeholder="wzrost w cm">
+              </div>
             </div>
-            <div class="col-lg-12" data-aos="fade-up" data-aos-delay="150"></div>
-              <div class="form-group mt-3">
-                <div class="row">
-                  <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required>
-                  </div>
-                  <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wiek" required>
-                  </div>
-                  <div class="col-md-2 form-group mt-3 mt-md-0">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wzrost" required>
-                  </div>
-                  <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required>
-                  </div>
-                  <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wiek" required>
-                  </div>
-                  <div class="col-md-2 form-group mt-3 mt-md-0">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wzrost" required>
-                  </div>
+            <div class="form-group mt-3">
+              <div class="container position-relative d-flex flex-column align-items-center">
+                <h3>Wprowadź wyniki swojego badania</h3>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-2 form-group">
+                  <input type="number" name="FEV1L" class="form-control" id="FEV1L" placeholder="FEV1 L" min="1" max="10" step="0.01">
+                </div>
+                <div class="col-md-2 form-group">
+                  <input type="number" name="FEV1P" class="form-control" id="FEV1P" placeholder="FEV1 %"  min="30" max="200" required>
+                </div>
+                <div class="col-md-2 form-group">
+                  <input type="number" name="VCmaxL" class="form-control" id="VCmaxL" placeholder="VCmax L" min="1" max="10" step="0.01">
+                </div>
+                <div class="col-md-2 form-group">
+                  <input type="number" name="VCmaxP" class="form-control" id="VCmaxP" placeholder="VCmax %" min="30" max="200" required>
+                </div>
+                <div class="col-md-2 form-group">
+                  <input type="number" name="Tiffenmax" class="form-control" id="Tiffenmax" placeholder="Tiffen/max" min="20" max="120">
                 </div>
               </div>
               <div class="form-group mt-3">
                 <div class="row ">
                   <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required>
+                    <input type="number" name="PEFL" class="form-control" id="PEFL" placeholder="PEF L" min="2" max="20" step="0.1">
                   </div>
                   <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wiek" required>
-                  </div>
-                  <div class="col-md-2 form-group mt-3 mt-md-0">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wzrost" required>
+                    <input type="number" name="PEFP" class="form-control" id="PEFP" placeholder="PEF %" min="30" max="200" required>
                   </div>
                   <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required>
+                    <input type="number" name="FEF50L" class="form-control" id="FEF50L" placeholder="FEF50 L" min="1" max="10" step="0.01">
+                  </div>
+                  <div class="col-md-2 form-group ">
+                    <input type="number" name="FEF50P" class="form-control" id="FEF50P" placeholder="FEF50 %" min="30" max="200" required>
                   </div>
                   <div class="col-md-2 form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wiek" required>
+                    <input type="number" name="FEF2575L" class="form-control" id="FEF2575L" placeholder="FEF25/75 L" min="1" max="10" step="0.01">
                   </div>
-                  <div class="col-md-2 form-group mt-3 mt-md-0">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Wzrost" required>
+                  <div class="col-md-2 form-group">
+                    <input type="number" name="FEF2575P" class="form-control" id="FEF2575P" placeholder="FEF25/75 %" min="30" max="200" required>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <div class="row justify-content-center">
+                  <div class="col-md-2 form-group">
+                    <div class="text-center"><button type="submit" name="submit" value="submit">Zatwierdź</button></div>
                   </div>
                 </div>
               </div>
             </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-
-          </div><!-- End Contact Form -->
-
+          </form>
         </div>
-
+        <div class="form-group mt-3">
+          <div class="container position-relative d-flex flex-column align-items-center">
+            <?php
+            if(isset($_get['submit'])){
+              $plec = $_POST['plec'];
+              $wiek = $_POST['wiek'];
+              $wzrost = $_POST['wzrost'];
+          
+              $FEV1L = $_POST['FEV1L'];
+              $FEV1P = $_POST['FEV1P'];
+              $VCmaxL = $_POST['VCmaxL'];
+              $VCmaxP = $_POST['VCmaxP'];
+              $Tiffenmax = $_POST['Tiffenmax'];
+          
+              $PEFL = $_POST['PEFL'];
+              $PEFP = $_POST['PEFP'];
+              $FEF50L = $_POST['FEF50L'];
+              $FEF50P = $_POST['FEF50P'];
+              $FEF2575L = $_POST['FEF2575L'];
+              $FEF2575P = $_POST['FEF2575P'];
+          }
+          if(FEV1P>0){
+            echo'<p>Twoje płuca są w dobrej kondycji</p>'
+          }
+            ?>
+          </div>
+        </div>
       </div>
     </section><!-- End Contact Section -->
+
+
 
 
     <!-- ======= Testimonials Section ======= -->
@@ -351,7 +361,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
