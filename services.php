@@ -90,7 +90,7 @@
           <h3>Podaj informacje o sobie</h3>
         </div>
         <div class="row gy-4 d-flex ">
-          <form>
+        <form method="post" role="form">
             <div class="row justify-content-center">
               <div class="col-2">
                 <!-- <input type="text" name="name" class="form-control" id="name" placeholder="płeć" required> -->
@@ -161,67 +161,87 @@
             </div>
           </form>
         </div>
-        <div class="form-group mt-3">
+                      <div class="form-group mt-3">
           <div class="container position-relative d-flex flex-column align-items-center">
             <?php
-            if(isset($_get['submit'])){
-              $plec = $_POST['plec'];
-              $wiek = $_POST['wiek'];
-              $wzrost = $_POST['wzrost'];
-          
-              $FEV1L = $_POST['FEV1L'];
-              $FEV1P = $_POST['FEV1P'];
-              $VCmaxL = $_POST['VCmaxL'];
-              $VCmaxP = $_POST['VCmaxP'];
-              $Tiffenmax = $_POST['Tiffenmax'];
-          
-              $PEFL = $_POST['PEFL'];
-              $PEFP = $_POST['PEFP'];
-              $FEF50L = $_POST['FEF50L'];
-              $FEF50P = $_POST['FEF50P'];
-              $FEF2575L = $_POST['FEF2575L'];
-              $FEF2575P = $_POST['FEF2575P'];
-          }
-          if(FEV1P>0.8)
-          {
-            echo'<p>Twoje drogi oddechowe są drożne</p>';
-          }
-          elseif(FEV1P>0.7)
-          {
-            echo'<p>Wyniki drożności dróg oddechowych są na granicy alarmu</p>';
-            echo'<p>Kontroluj stan zdrowia, rozważ kontakt z lekarzem</p>';
-          }
-          else
-          {
-            echo'<p>Prawdopodobnie masz problem z drożnością dróg oddechowych </p>';
-            echo'<p>Skonsultuj  wyniki ze specjalistą</p>';
-          }
+              $plec=0.1;
+              $wiek=0.1;
+              $wzrost=0.1;
+              $FEV1L=0.1;
+              $FEV1P=0.1;
+              $VCmaxL=0.1;
+              $VCmaxP=0.1;
+              $Tiffenmax=0.1;
+              $PEFL=0.1;
+              $PEFP=0.1;
+              $FEF50L=0.1;
+              $FEF50P=0.1;
+              $FEF2575L=0.1;
+              $FEF2575P=0.1;
+              
+              $wyniki=0;
+              
+                if(isset($_GET['submit'])){
+                  $plec = $_POST['plec'];
+                  $wiek = $_POST['wiek'];
+                  $wzrost = $_POST['wzrost'];
 
-          if(VCmaxP>0.8)
-          {
-            echo'<p>Objętość Twoich płuc jest w normie</p>';
-          }
-          elseif(VCmaxP<=0.8)
-          {
-            echo'<p>Twoje płuca są mniejsze niż u przeciętnego pacjęta</p>';
-            echo'<p>Kontroluj saturację krwi, rozważ kontakt z lekarzem </p>';
-          }
+                  $FEV1L = $_POST['FEV1L'];
+                  $FEV1P = $_POST['FEV1P'];
+                  $VCmaxL = $_POST['VCmaxL'];
+                  $VCmaxP = $_POST['VCmaxP'];
+                  $Tiffenmax = $_POST['Tiffenmax'];
 
-          if(PEFP>0.8){
-            echo'<p>Szczytowy przepływ Twoich płuc jest prawidłowy</p>';
-          }
-          elseif(PEFP>0.7)
-          {
-            echo'<p>Szczytowy przepływ Twoich płuc jest dolnej granicy normy</p>';
-            echo'<p>Kontroluj stan zdrowia, rozważ kontakt z lekarzem</p>';
-          }
-          else
-          {
-            echo'<p>Prawdopodobnie masz problem z drożnością dróg oddechowych </p>';
-            echo'<p>Skonsultuj  wyniki ze specjalistą</p>';
-          }
+                  $PEFL = $_POST['PEFL'];
+                  $PEFP = $_POST['PEFP'];
+                  $FEF50L = $_POST['FEF50L'];
+                  $FEF50P = $_POST['FEF50P'];
+                  $FEF2575L = $_POST['FEF2575L'];
+                  $FEF2575P = $_POST['FEF2575P'];
+                  $wyniki=1;
+                    
+                    }
+              if($wyniki!=0)
+              {
+                  if($FEV1P>0.8)
+                  {
+                    echo'<p>Twoje drogi oddechowe są drożne</p>';
+                  }
+                  elseif($FEV1P>0.7)
+                  {
+                    echo'<p>Wyniki drożności dróg oddechowych są na granicy alarmu</p>';
+                    echo'<p>Kontroluj stan zdrowia, rozważ kontakt z lekarzem</p>';
+                  }
+                  else
+                  {
+                    echo'<p>Prawdopodobnie masz problem z drożnością dróg oddechowych </p>';
+                    echo'<p>Skonsultuj  wyniki ze specjalistą</p>';
+                  }
 
+                  if($VCmaxP>0.8)
+                  {
+                    echo'<p>Objętość Twoich płuc jest w normie</p>';
+                  }
+                  elseif($VCmaxP<=0.8)
+                  {
+                    echo'<p>Twoje płuca są mniejsze niż u przeciętnego pacjęta</p>';
+                    echo'<p>Kontroluj saturację krwi, rozważ kontakt z lekarzem </p>';
+                  }
 
+                  if($PEFP>0.8){
+                    echo'<p>Szczytowy przepływ Twoich płuc jest prawidłowy</p>';
+                  }
+                  elseif($PEFP>0.7)
+                  {
+                    echo'<p>Szczytowy przepływ Twoich płuc jest dolnej granicy normy</p>';
+                    echo'<p>Kontroluj stan zdrowia, rozważ kontakt z lekarzem</p>';
+                  }
+                  else
+                  {
+                    echo'<p>Prawdopodobnie masz problem z drożnością dróg oddechowych </p>';
+                    echo'<p>Skonsultuj  wyniki ze specjalistą</p>';
+                }
+              }
             ?>
           </div>
         </div>
@@ -398,6 +418,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
