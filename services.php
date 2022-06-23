@@ -182,9 +182,46 @@
               $FEF2575L = $_POST['FEF2575L'];
               $FEF2575P = $_POST['FEF2575P'];
           }
-          if(FEV1P>0){
-            echo'<p>Twoje płuca są w dobrej kondycji</p>'
+          if(FEV1P>0.8)
+          {
+            echo'<p>Twoje drogi oddechowe są drożne</p>';
           }
+          elseif(FEV1P>0.7)
+          {
+            echo'<p>Wyniki drożności dróg oddechowych są na granicy alarmu</p>';
+            echo'<p>Kontroluj stan zdrowia, rozważ kontakt z lekarzem</p>';
+          }
+          else
+          {
+            echo'<p>Prawdopodobnie masz problem z drożnością dróg oddechowych </p>';
+            echo'<p>Skonsultuj  wyniki ze specjalistą</p>';
+          }
+
+          if(VCmaxP>0.8)
+          {
+            echo'<p>Objętość Twoich płuc jest w normie</p>';
+          }
+          elseif(VCmaxP<=0.8)
+          {
+            echo'<p>Twoje płuca są mniejsze niż u przeciętnego pacjęta</p>';
+            echo'<p>Kontroluj saturację krwi, rozważ kontakt z lekarzem </p>';
+          }
+
+          if(PEFP>0.8){
+            echo'<p>Szczytowy przepływ Twoich płuc jest prawidłowy</p>';
+          }
+          elseif(PEFP>0.7)
+          {
+            echo'<p>Szczytowy przepływ Twoich płuc jest dolnej granicy normy</p>';
+            echo'<p>Kontroluj stan zdrowia, rozważ kontakt z lekarzem</p>';
+          }
+          else
+          {
+            echo'<p>Prawdopodobnie masz problem z drożnością dróg oddechowych </p>';
+            echo'<p>Skonsultuj  wyniki ze specjalistą</p>';
+          }
+
+
             ?>
           </div>
         </div>
